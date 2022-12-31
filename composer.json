@@ -8,6 +8,9 @@
         "mpdf/mpdf": "^8.0",
         "phpoffice/phpspreadsheet": "^1.26"
     },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    },
     "authors": [
         {
             "name": "Frans-Willem Post",
