@@ -119,9 +119,8 @@ class PdfMonthCalendar
         TRUE,        // Should values be formatted (the equivalent of getFormattedValue() for each cell)
         TRUE         // Should the array be indexed by cell row and cell column
       );
-      
-      $agentTMP = reset(reset($agentArray));
-      $this->_agent = $agentTMP ;
+      $agentTMP = end($agentArray);
+      $this->_agent = end($agentTMP);
 
     $work = [];
 
