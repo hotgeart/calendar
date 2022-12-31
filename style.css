@@ -1,0 +1,64 @@
+table.scaffold {
+  margin: 0 auto;
+}
+
+table.month {
+  font-family: sans-serif;
+}
+
+table.month th,
+table.month td {
+  border-right: solid 0.3mm #343433;
+  border-bottom: solid 0.3mm #343433;
+  padding: 1mm 2mm;
+  text-align: center;
+}
+
+table.month tr.title {
+  background-color: #e5e6e1;
+  color: #343433;
+}
+
+table.month tr.week {
+  background-color: #e5e6e1;
+  color: #343433;
+}
+
+.h1 {
+  background-color: #75a1e4;
+  color: #143566;
+  font-weight: bold;
+}
+
+.h2 {
+  background-color: #e4b875;
+  color: #624313;
+  font-weight: bold;
+}
+
+.legend {
+  text-align: center;
+  margin-top: 3mm;
+  font-family: sans-serif;
+}
+
+.legend .h1,
+.legend .h2 {
+  display: inline-block;
+  padding: 7px 10px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: #343433;
+  font-size: 16px;
+}
