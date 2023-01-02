@@ -36,6 +36,12 @@ table.month tr.week {
   font-weight: bold;
 }
 
+.holiday {
+  background-image: url(triangle.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
 .legend {
   text-align: center;
   margin-top: 3mm;

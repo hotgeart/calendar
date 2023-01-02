@@ -104,23 +104,23 @@ class PdfMonthCalendar
 
     $scheduleArray = $spreadsheet->getActiveSheet()
       ->rangeToArray(
-        $this->_code.'6:'.$this->_code.'483',  // The worksheet range that we want to retrieve
+        $this->_code . '6:' . $this->_code . '483',  // The worksheet range that we want to retrieve
         NULL,        // Value that should be returned for empty cells
         TRUE,        // Should formulas be calculated (the equivalent of getCalculatedValue() for each cell)
         TRUE,        // Should values be formatted (the equivalent of getFormattedValue() for each cell)
         TRUE         // Should the array be indexed by cell row and cell column
       );
 
-      $agentArray = $spreadsheet->getActiveSheet()
+    $agentArray = $spreadsheet->getActiveSheet()
       ->rangeToArray(
-        $this->_code.'1',  // The worksheet range that we want to retrieve
+        $this->_code . '1',  // The worksheet range that we want to retrieve
         NULL,        // Value that should be returned for empty cells
         TRUE,        // Should formulas be calculated (the equivalent of getCalculatedValue() for each cell)
         TRUE,        // Should values be formatted (the equivalent of getFormattedValue() for each cell)
         TRUE         // Should the array be indexed by cell row and cell column
       );
-      $agentTMP = end($agentArray);
-      $this->_agent = end($agentTMP);
+    $agentTMP = end($agentArray);
+    $this->_agent = end($agentTMP);
 
     $work = [];
 
@@ -204,7 +204,25 @@ class PdfMonthCalendar
         // Print day of month
         $dtfmt->setPattern('d');
         $class = $this->_work[$dt->format('n') . '/' . $dt->format('j')];
-        $row[] = sprintf('<td class='.$class.'>%s</td>', $dtfmt->format($dt));
+        $holidays = array(
+          "1/1",
+          "4/10",
+          "5/1",
+          "5/18",
+          "5/29",
+          "7/21",
+          "8/15",
+          "11/1",
+          "11/11",
+          "12/25"
+        );
+        if (in_array($dt->format('n') . '/' . $dt->format('j'), $holidays)) {
+          $holiday = "holiday";
+        } else {
+          $holiday = "";
+        }
+
+        $row[] = sprintf('<td class="' . $class . ' ' . $holiday . '">%s</td>', $dtfmt->format($dt));
       }
     }
     foreach ($rows as $rowIx => &$row) {
@@ -238,14 +256,14 @@ class PdfMonthCalendar
       'orientation' => 'L',
     ];
     $pdf = new \Mpdf\Mpdf($pdfConfig);
-    $pdf->SetTitle('Maandkalender ' . $this->_year);
-    $pdf->SetAuthor('Frans-Willem Post (FWieP)');
+    $pdf->SetTitle('Planning ' . $this->_year);
+    $pdf->SetAuthor('THOMAS MESTER');
 
     $css = file_get_contents('style.css');
     $pdf->WriteHTML($css, \Mpdf\HTMLParserMode::HEADER_CSS);
 
     $pdf->AddPage();
-    $html = '<h1>'.$this->_agent.'</h1>';
+    $html = '<h1>' . $this->_agent . '</h1>';
     $html .= '<table class="scaffold"><tr>';
     for ($m = 1; $m <= 3; $m++) {
       // Add january - march to the first page's first row
@@ -262,7 +280,7 @@ class PdfMonthCalendar
     $pdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
 
     $pdf->AddPage();
-    $html = '<h1>'.$this->_agent.'</h1>';
+    $html = '<h1>' . $this->_agent . '</h1>';
     $html .= '<table class="scaffold"><tr>';
     for ($m = 7; $m <= 9; $m++) {
       // Add july - september to the second page's first row
