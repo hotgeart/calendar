@@ -52,7 +52,7 @@ if ($_POST) {
 <body>
   <div class="columns">
     <div class="column">
-      <h1 class="title">Planning 2023</h1>
+      <h1 class="title">📅 Planning 2023</h1>
       <form action="<?php print basename($_SERVER['PHP_SELF']) ?>" method="post">
         <div class="field content ">
           <label class="label">Agent :</label>
