@@ -33,6 +33,15 @@ class PdfMonthCalendar
   private $_work = "";
   private $_agent = "";
   private $_code = "";
+
+  private $_h1 = 0;
+  private $_h2 = 0;
+
+  private $_sat = 0;
+  private $_sun = 0;
+  private $_holi = 0;
+
+
   /**
    * This calendar's year
    *
@@ -172,16 +181,6 @@ class PdfMonthCalendar
     // Array of 8 rows for weeknumbers (1) + weekdays (7)
     $rows = array_fill(-1, 8, []);
 
-    // Construct first row (for weeknumbers)
-    /*$dtfmt->setPattern('ww');
-        for ($weekLoop = -1; $weekLoop < 6; $weekLoop++) {
-            if ($weekLoop == -1) {
-                $rows[-1][] = '<th>wk</th>';
-                continue;
-            }
-            $dt = self::_dtWrap($firstThisMonth, 7*$weekLoop);
-            $rows[-1][] = sprintf('<td>%s</td>', $dtfmt->format($dt));
-        }*/
     // Construct second to eighth rows
     foreach ($rows as $rowIx => &$row) {
       if ($rowIx == -1) {
@@ -218,8 +217,40 @@ class PdfMonthCalendar
         );
         if (in_array($dt->format('n') . '/' . $dt->format('j'), $holidays)) {
           $holiday = "holiday";
+          if($class == "H1" || $class == "H2") {
+            $this->_holi = $this->_holi + 1;
+          }
         } else {
           $holiday = "";
+        }
+
+        switch ($class) {
+          case 'H1':
+            $this->_h1 = $this->_h1 + 1;
+
+            if($dt->format('w') == 0) {
+              $this->_sun = $this->_sun + 1;
+            }
+    
+            if($dt->format('w') == 6) {
+              $this->_sat = $this->_sat + 1;
+            }
+            break;
+          case 'H2':
+            $this->_h2 = $this->_h2 + 1;
+
+            if($dt->format('w') == 0) {
+              $this->_sun = $this->_sun + 1;
+            }
+    
+            if($dt->format('w') == 6) {
+              $this->_sat = $this->_sat + 1;
+            }
+            break;
+          
+          default:
+            # code...
+            break;
         }
 
         $row[] = sprintf('<td class="' . $class . ' ' . $holiday . '">%s</td>', $dtfmt->format($dt));
@@ -296,6 +327,43 @@ class PdfMonthCalendar
     $html .= '<div class="legend"><span class="H2">H2</span> <strong>12h15</strong> (pause : 16h45 - 17h15) <strong>21h45</strong></div>';
     $pdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
 
-    $pdf->Output('Planning ' . $this->_year . '.pdf', D::DOWNLOAD);
+    // Stats
+    $pdf->AddPage();
+    $html = '<h1>' . $this->_agent . '</h1>';
+    $html .= '<table class="scaffold month stats">';
+
+    $html .= "<tr class='title'>";
+    $html .= '<td colspan="2"><strong>Statistiques</strong></td>';
+    $html .= "</tr>";
+
+    $html .= "<tr>";
+    $html .= '<td>Nombre de jours <span class="H1">H1</span></td><td align="right">'.$this->_h1.'</td>';
+    $html .= "</tr>";
+
+    $html .= "<tr>";
+    $html .= '<td>Nombre de jours <span class="H2">H2</span></td><td align="right">'.$this->_h2.'</td>';
+    $html .= "</tr>";
+
+    $html .= "<tr>";
+    $html .= '<td><strong>Total</strong> (H1+H2)</td><td align="right"><strong>'.$this->_h1+$this->_h2.'</strong></td>';
+    $html .= "</tr>";
+
+    $html .= "<tr>";
+    $html .= '<td>Nombre de jours fériés au travail</td><td align="right">'.$this->_holi.'</td>';
+    $html .= "</tr>";
+
+    $html .= "<tr>";
+    $html .= '<td>Nombre de Samedi au travail</td><td align="right">'.$this->_sat.'</td>';
+    $html .= "</tr>";
+
+    $html .= "<tr>";
+    $html .= '<td>Nombre de Dimanche au travail</td><td align="right">'.$this->_sun.'</td>';
+    $html .= "</tr>";
+
+    $html .= '</tr></table>';
+
+    $pdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
+
+    $pdf->Output('Planning '. $this->_agent .' '. $this->_year . '.pdf', D::DOWNLOAD);
   }
 }

@@ -18,17 +18,33 @@ if ($_POST) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <title>Planning 2023</title>
   <style>
+    html {
+      background: rgb(243, 244, 246);
+    }
+
     body {
       margin: 0;
       padding: 0;
     }
 
     .columns {
-      background-color: #fafafa;
+      background-color: #fff;
       margin: 50px auto;
       max-width: 500px;
       padding: 10px 20px;
       border-radius: 10px;
+      --shadow-color: 220deg 5% 67%;
+      --shadow-elevation-low:
+        0.6px 0.7px 1px hsl(var(--shadow-color) / 0.27),
+        1px 1.1px 1.7px -1.2px hsl(var(--shadow-color) / 0.27),
+        2.2px 2.4px 3.7px -2.5px hsl(var(--shadow-color) / 0.27);
+      --shadow-elevation-medium:
+        0.6px 0.7px 1px hsl(var(--shadow-color) / 0.23),
+        1.5px 1.7px 2.6px -0.6px hsl(var(--shadow-color) / 0.23),
+        2.9px 3.2px 4.9px -1.2px hsl(var(--shadow-color) / 0.23),
+        5.7px 6.3px 9.6px -1.9px hsl(var(--shadow-color) / 0.23),
+        11px 12.2px 18.5px -2.5px hsl(var(--shadow-color) / 0.23);
+        box-shadow: var(--shadow-elevation-medium);
     }
   </style>
 </head>
@@ -39,13 +55,62 @@ if ($_POST) {
       <h1 class="title">Planning 2023</h1>
       <form action="<?php print basename($_SERVER['PHP_SELF']) ?>" method="post">
         <div class="field content ">
-          <label class="label">Code</label>
-          <div class="control">
-            <input class="input" type="text" name="code" id="code" value="BE" placeholder="Agent 26 : BE">
+          <label class="label">Agent :</label>
+          <div class="select" style="display: block;">
+            <select name="code" id="code" style="width:100%;">
+              <option value="C">Agent 1</option>
+              <option value="E">Agent 2</option>
+              <option value="G">Agent 3</option>
+              <option value="I">Agent 4</option>
+              <option value="K">Agent 5</option>
+              <option value="M">Agent 6</option>
+              <option value="O">Agent 7</option>
+              <option value="Q">Agent 8</option>
+              <option value="S">Agent 9</option>
+              <option value="U">Agent 10</option>
+              <option value="Y">Agent 11</option>
+              <option value="AA">Agent 12</option>
+              <option value="AC">Agent 13</option>
+              <option value="AE">Agent 14</option>
+              <option value="AG">Agent 15</option>
+              <option value="AI">Agent 16</option>
+              <option value="AK">Agent 17</option>
+              <option value="AM">Agent 18</option>
+              <option value="AO">Agent 19</option>
+              <option value="AQ">Agent 20</option>
+              <option value="AU">Agent 21</option>
+              <option value="AW">Agent 22</option>
+              <option value="AY">Agent 23</option>
+              <option value="BA">Agent 24</option>
+              <option value="BC">Agent 25</option>
+              <option value="BE" selected>Agent 26</option>
+              <option value="BG">Agent 27</option>
+              <option value="BI">Agent 28</option>
+              <option value="BK">Agent 29</option>
+              <option value="BM">Agent 30</option>
+              <option value="BQ">Agent 31</option>
+              <option value="BS">Agent 32</option>
+              <option value="BU">Agent 33</option>
+              <option value="BW">Agent 34</option>
+              <option value="BY">Agent 35</option>
+              <option value="CA">Agent 36</option>
+              <option value="CC">Agent 37</option>
+              <option value="CE">Agent 38</option>
+              <option value="CG">Agent 39</option>
+              <option value="CI">Agent 40</option>
+              <option value="CM">Agent 41</option>
+              <option value="CO">Agent 42</option>
+              <option value="CQ">Agent 43</option>
+              <option value="CS">Agent 44</option>
+              <option value="CU">Agent 45</option>
+              <option value="CW">Agent 46</option>
+              <option value="CY">Agent 47</option>
+              <option value="DA">Agent 48</option>
+              <option value="DC">Agent 49</option>
+              <option value="DE">Agent 50</option>
+            </select>
           </div>
-          <p class="help">Le code est la colonne de l'Excel.</p>
-          <p class="help">Exemples pour l'agent 26, c'est BE :</p>
-          <img src="data:image/png;base64,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" alt="">
+          <p class="help my-2">Sélectionnez votre numéro d'agent.</p>
         </div>
         <button class="button is-link">
           Générer
