@@ -16,7 +16,7 @@ if ($_POST) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <title>Planning 2023</title>
+  <title>🏛️ BXL 🇧🇪</title>
   <style>
     html {
       background: rgb(243, 244, 246);
@@ -44,7 +44,7 @@ if ($_POST) {
         2.9px 3.2px 4.9px -1.2px hsl(var(--shadow-color) / 0.23),
         5.7px 6.3px 9.6px -1.9px hsl(var(--shadow-color) / 0.23),
         11px 12.2px 18.5px -2.5px hsl(var(--shadow-color) / 0.23);
-        box-shadow: var(--shadow-elevation-medium);
+      box-shadow: var(--shadow-elevation-medium);
     }
   </style>
 </head>
@@ -118,6 +118,65 @@ if ($_POST) {
       </form>
     </div>
   </div>
+
+  <div class="columns">
+    <div class="column">
+      <h1 class="title">🗺️ Map Tracker</h1>
+      <p>Cet outil permet de tracker avec la 4G les déplacements et de "colorier" les routes où on est passées.</p>
+      <a href="map.jpg"><img src="map.jpg" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
+      <a href="https://hotgeart.com/bxl/v2.apk" class="mt-2 button is-link">Télécharger l'APK (32Mo)</a>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column">
+      <h1 class="title">🧩 Extension "Quick Reject"</h1>
+      (PAS ENCORE DISPO)
+      <p>Cette extension ajoute un bouton pour rejeter rapidement avec la raison : "Situation pas claire".</p>
+      <a href="screenshot.png"><img src="screenshot.png" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
+      <a href="#" class="mt-2 button is-link">Télécharger l'extension</a>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="margin-top: 10%;">
+      <header class="modal-card-head" style="background: white; border: 0;">
+        <p class="modal-card-title">Attention</p>
+      </header>
+      <section class="modal-card-body">
+        <p>Ces outils sont pour mon usage personnel, mais je les partage vu qu'on me les demandes. Soyez pas des batards et dites merci.</p>
+      </section>
+      <footer class="modal-card-foot" style="background: white; border: 0;">
+        <button class="button is-success close">Fermer</button>
+      </footer>
+    </div>
+  </div>
+
 </body>
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  modal.style.display = "block";
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
 
 </html>
