@@ -10,7 +10,7 @@ if ($_POST) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
+<!-- Ne regarde pas le code, il est dégeulasse -->
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,6 +53,7 @@ if ($_POST) {
   <div class="columns">
     <div class="column">
       <h1 class="title">📅 Planning 2023</h1>
+      <p>Créer un calendrier personnel PDF en analysant l'Excel du service.</p>
       <form action="<?php print basename($_SERVER['PHP_SELF']) ?>" method="post">
         <div class="field content ">
           <label class="label">Agent :</label>
@@ -122,7 +123,7 @@ if ($_POST) {
   <div class="columns">
     <div class="column">
       <h1 class="title">🗺️ Map Tracker</h1>
-      <p>Cet outil permet de tracker avec la 4G les déplacements et de "colorier" les routes où on est passées.</p>
+      <p>Cet outil permet de voir les limites de Bruxelles (1000) et de tracker avec la 4G les déplacements et de "colorier" les routes où nous sommes passées.</p>
       <a href="map.jpg"><img src="map.jpg" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
       <a href="https://hotgeart.com/bxl/v2.apk" class="mt-2 button is-link">Télécharger l'APK (32Mo)</a>
     </div>
@@ -131,8 +132,9 @@ if ($_POST) {
   <div class="columns">
     <div class="column">
       <h1 class="title">🧩 Extension "Quick Reject"</h1>
-      (PAS ENCORE DISPO)
-      <p>Cette extension ajoute un bouton pour rejeter rapidement avec la raison : "Situation pas claire".</p>
+      <span style="color:red;">(PAS ENCORE DISPO)</span>
+      <p>Cette extension ajoute un bouton pour rejeter rapidement avec la raison : <em>"Situation pas claire"</em>. Ainsi qu'un compteur de situations traitées.</p>
+      <p>Ne fonctionne que si votre CityControl est en Français.</p>
       <a href="screenshot.png"><img src="screenshot.png" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
       <a href="#" class="mt-2 button is-link">Télécharger l'extension</a>
     </div>
@@ -145,7 +147,7 @@ if ($_POST) {
         <p class="modal-card-title">Attention</p>
       </header>
       <section class="modal-card-body">
-        <p>Ces outils sont pour mon usage personnel, mais je les partage vu qu'on me les demandes. Soyez pas des batards et dites merci.</p>
+        <p>Ces outils sont pour mon usage personnel, mais je les partage comme on me les demande. Soyez pas des bâtards et dites merci.</p>
       </section>
       <footer class="modal-card-foot" style="background: white; border: 0;">
         <button class="button is-success close">Fermer</button>
