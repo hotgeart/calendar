@@ -125,7 +125,7 @@ if ($_POST) {
       <h1 class="title">🗺️ Map Tracker</h1>
       <p>Cet outil permet de voir les limites de Bruxelles (1000) et de tracker avec la 4G les déplacements et de "colorier" les routes où nous sommes passées.</p>
       <a href="map.jpg"><img src="map.jpg" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
-      <a href="https://hotgeart.com/bxl/v2.apk" class="mt-2 button is-link">Télécharger l'APK (32Mo)</a>
+      <a href="https://drive.google.com/file/d/11ITrXo4n8s21LMIR5i49VwHJgtEXphLP/view?usp=share_link" class="mt-2 button is-link">Télécharger l'APK (32Mo)</a>
     </div>
   </div>
 
