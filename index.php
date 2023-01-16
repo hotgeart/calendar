@@ -132,11 +132,10 @@ if ($_POST) {
   <div class="columns">
     <div class="column">
       <h1 class="title">🧩 Extension "Quick Reject"</h1>
-      <span style="color:red;">(PAS ENCORE DISPO)</span>
       <p>Cette extension ajoute un bouton pour rejeter rapidement avec la raison : <em>"Situation pas claire"</em>. Ainsi qu'un compteur de situations traitées.</p>
       <p>Ne fonctionne que si votre CityControl est en Français.</p>
       <a href="screenshot.png"><img src="screenshot.png" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
-      <a href="#" class="mt-2 button is-link">Télécharger l'extension</a>
+      <a href="https://chrome.google.com/webstore/detail/quick-reject/nenocmjmmkkgmieegnpmllihfmjgiobi" class="mt-2 button is-link">Télécharger l'extension</a>
     </div>
   </div>
 
