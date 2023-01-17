@@ -138,46 +138,5 @@ if ($_POST) {
       <a href="https://chrome.google.com/webstore/detail/quick-reject/nenocmjmmkkgmieegnpmllihfmjgiobi" class="mt-2 button is-link">Télécharger l'extension</a>
     </div>
   </div>
-
-  <div id="myModal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card" style="margin-top: 10%;">
-      <header class="modal-card-head" style="background: white; border: 0;">
-        <p class="modal-card-title">Attention</p>
-      </header>
-      <section class="modal-card-body">
-        <p>Ces outils sont pour mon usage personnel, mais je les partage comme on me les demande. Soyez pas des bâtards et dites merci.</p>
-      </section>
-      <footer class="modal-card-foot" style="background: white; border: 0;">
-        <button class="button is-success close">Fermer</button>
-      </footer>
-    </div>
-  </div>
-
 </body>
-<script>
-  // Get the modal
-  var modal = document.getElementById("myModal");
-
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  modal.style.display = "block";
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-</script>
-
 </html>
