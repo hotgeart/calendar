@@ -11,6 +11,7 @@ if ($_POST) {
 <!DOCTYPE html>
 <html lang="fr">
 <!-- Ne regarde pas le code, il est dégeulasse -->
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,6 +54,7 @@ if ($_POST) {
   <div class="columns">
     <div class="column">
       <h1 class="title">📅 Planning 2023</h1>
+      <div class="content">
       <p>Créer un calendrier personnel PDF en analysant l'Excel du service.</p>
       <form action="<?php print basename($_SERVER['PHP_SELF']) ?>" method="post">
         <div class="field content ">
@@ -118,25 +120,39 @@ if ($_POST) {
         </button>
       </form>
     </div>
+    </div>
   </div>
 
   <div class="columns">
     <div class="column">
       <h1 class="title">🗺️ Map Tracker</h1>
-      <p>Cette app Android permet de voir les limites de Bruxelles (1000) et de tracker avec la 4G les déplacements et de "colorier" les routes où nous sommes passées.</p>
+      <div class="content">
+      <p>Cette app <strong>Android</strong> permet de voir les limites de Bruxelles (1000) et de tracker avec la 4G les déplacements et de "colorier" les routes où nous sommes passées.</p>
       <a href="map.jpg"><img src="map.jpg" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
-      <a href="https://drive.google.com/file/d/11ITrXo4n8s21LMIR5i49VwHJgtEXphLP/view?usp=share_link" class="mt-2 button is-link">Télécharger l'APK (32Mo)</a>
+      <a href="https://drive.google.com/file/d/1P6JTpEmQ2YrwioX8wgsyw3ltZQ8u4uj_/view?usp=share_link" class="mt-2 button is-link">Télécharger l'APK (32Mo)</a>
+      <p class="mt-3">Anciennes versions :</p>
+      <ul>
+        <li>
+          <a href="https://drive.google.com/file/d/11ITrXo4n8s21LMIR5i49VwHJgtEXphLP/view?usp=share_link" >
+            v2.0 (32Mo)
+          </a>
+        </li>
+      </ul>
+    </div>
     </div>
   </div>
 
   <div class="columns">
     <div class="column">
       <h1 class="title">🧩 Extension "Quick Reject"</h1>
+      <div class="content">
       <p>Cette extension ajoute un bouton pour rejeter rapidement avec la raison : <em>"Situation pas claire"</em>. Ainsi qu'un compteur de situations traitées.</p>
       <p>Ne fonctionne que si votre CityControl est en Français.</p>
       <a href="screenshot.png"><img src="screenshot.png" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
       <a href="https://chrome.google.com/webstore/detail/quick-reject/nenocmjmmkkgmieegnpmllihfmjgiobi" class="mt-2 button is-link">Télécharger l'extension</a>
     </div>
+    </div>
   </div>
 </body>
+
 </html>
