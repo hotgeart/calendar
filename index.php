@@ -129,9 +129,14 @@ if ($_POST) {
       <div class="content">
       <p>Cette app <strong>Android</strong> permet de voir les limites de Bruxelles (1000) et de tracker avec la 4G les déplacements et de "colorier" les routes où nous sommes passées.</p>
       <a href="map.jpg"><img src="map.jpg" class="my-2" style="display: block; margin: auto; max-height:300px;" /></a>
-      <a href="https://drive.google.com/file/d/1P6JTpEmQ2YrwioX8wgsyw3ltZQ8u4uj_/view?usp=share_link" class="mt-2 button is-link">Télécharger l'APK (32Mo)</a>
+      <a href="https://drive.google.com/file/d/1Lv-k4EnAEsofuiASH_0KFNQOSVkN6EQA/view?usp=sharing" class="mt-2 button is-link">Télécharger l'APK (32Mo)</a>
       <p class="mt-3">Anciennes versions :</p>
       <ul>
+        <li>
+          <a href="https://drive.google.com/file/d/1P6JTpEmQ2YrwioX8wgsyw3ltZQ8u4uj_/view?usp=share_link" >
+            v2.1 (32Mo)
+          </a>
+        </li>
         <li>
           <a href="https://drive.google.com/file/d/11ITrXo4n8s21LMIR5i49VwHJgtEXphLP/view?usp=share_link" >
             v2.0 (32Mo)
