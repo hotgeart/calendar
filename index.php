@@ -123,6 +123,7 @@ if ($_POST) {
     </div>
   </div>
 
+  <?php if(isset($_GET['secret'])) { ?>
   <div class="columns">
     <div class="column">
       <h1 class="title">🗺️ Map Tracker</h1>
@@ -158,6 +159,7 @@ if ($_POST) {
     </div>
     </div>
   </div>
+  <?php } ?>
 </body>
 
 </html>
