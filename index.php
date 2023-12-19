@@ -3,7 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 if ($_POST) {
-  $c = new FWieP\PdfMonthCalendar($_POST['code'], "2023");
+  $c = new FWieP\PdfMonthCalendar($_POST['code'], "2024");
   $c->getPDF();
 }
 
@@ -53,7 +53,7 @@ if ($_POST) {
 <body>
   <div class="columns">
     <div class="column">
-      <h1 class="title">📅 Planning 2023</h1>
+      <h1 class="title">📅 Planning 2024</h1>
       <div class="content">
         <p>Créer un calendrier personnel PDF en analysant l'Excel du service.</p>
         <form action="<?php print basename($_SERVER['PHP_SELF']) ?>" method="post">
@@ -86,7 +86,7 @@ if ($_POST) {
                 <option value="AY">Agent 23</option>
                 <option value="BA">Agent 24</option>
                 <option value="BC">Agent 25</option>
-                <option value="BE" selected>Agent 26</option>
+                <option value="BE">Agent 26</option>
                 <option value="BG">Agent 27</option>
                 <option value="BI">Agent 28</option>
                 <option value="BK">Agent 29</option>

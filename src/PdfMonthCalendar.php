@@ -104,7 +104,7 @@ class PdfMonthCalendar
 
     $dateArray = $spreadsheet->getActiveSheet()
       ->rangeToArray(
-        'AT6:AT483',  // The worksheet range that we want to retrieve
+        'AT3:AT368',  // The worksheet range that we want to retrieve
         NULL,        // Value that should be returned for empty cells
         TRUE,        // Should formulas be calculated (the equivalent of getCalculatedValue() for each cell)
         TRUE,        // Should values be formatted (the equivalent of getFormattedValue() for each cell)
@@ -113,7 +113,7 @@ class PdfMonthCalendar
 
     $scheduleArray = $spreadsheet->getActiveSheet()
       ->rangeToArray(
-        $this->_code . '6:' . $this->_code . '483',  // The worksheet range that we want to retrieve
+        $this->_code . '3:' . $this->_code . '368',  // The worksheet range that we want to retrieve
         NULL,        // Value that should be returned for empty cells
         TRUE,        // Should formulas be calculated (the equivalent of getCalculatedValue() for each cell)
         TRUE,        // Should values be formatted (the equivalent of getFormattedValue() for each cell)
@@ -205,10 +205,10 @@ class PdfMonthCalendar
         $class = $this->_work[$dt->format('n') . '/' . $dt->format('j')];
         $holidays = array(
           "1/1",
-          "4/10",
+          "4/1",
           "5/1",
-          "5/18",
-          "5/29",
+          "5/9",
+          "5/20",
           "7/21",
           "8/15",
           "11/1",
@@ -361,6 +361,10 @@ class PdfMonthCalendar
     $html .= "</tr>";
 
     $html .= '</tr></table>';
+    $html .= '<br />';
+    $html .= '<div class="legend"><strong>Attention</strong> : Veuillez vérifier quelques dates au hasard avant de suivre aveuglément ce calendrier.</div>';
+    $html .= '<br />';
+    $html .= '<div class="legend">PDF généré via <a href="https://hotgeart.com/brussels/">https://hotgeart.com/brussels/</a> - Thomas Mester</div>';
 
     $pdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
 
