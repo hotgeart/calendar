@@ -365,6 +365,8 @@ class PdfMonthCalendar
     $html .= '<div class="legend"><strong>Attention</strong> : Veuillez vérifier quelques dates au hasard avant de suivre aveuglément ce calendrier.</div>';
     $html .= '<br />';
     $html .= '<div class="legend">PDF généré via <a href="https://hotgeart.com/brussels/">https://hotgeart.com/brussels/</a> - Thomas Mester</div>';
+    $html .= '<br />';
+    $html .= '<div class="legend"><img width="150" height="150" src="/qrcode.png"></div>';
 
     $pdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
 
